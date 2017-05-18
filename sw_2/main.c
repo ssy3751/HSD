@@ -66,7 +66,7 @@ int main(int argc, char** argv)
   for (i = 0; i < (SIZE+1)*SIZE; i++)
   {
     *(fpga_bram + i) = flat[i];
-    printf("%f",flat[i]);
+    printf("%-10f\n",flat[i]);
   }
 
   // run
