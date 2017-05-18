@@ -66,7 +66,8 @@ int main(int argc, char** argv)
   float *fpga_bram = mmap(NULL, ((SIZE+1)*SIZE)* sizeof(float), PROT_WRITE, MAP_SHARED, foo, 0x40000000);
   for (i = 0; i < (SIZE+1)*SIZE; i++)
   {
-    *(fpga_bram + i) = flat[i];
+    //*(fpga_bram + i) = flat[i];
+    *(fpga_bram + i) = i;
   }
 
   // run
