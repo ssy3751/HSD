@@ -58,7 +58,7 @@ int main(int argc, char** argv)
       output_cpu[SIZE-1-i] += input_a[SIZE-1-i] * input_b[SIZE*(SIZE-1-i)+SIZE-1-j];
       printf("%-10f",input_a[SIZE-1-i]);
       printf("%-10f",input_b[SIZE*(SIZE-1-i)+SIZE-1-j]);
-      printf("%-10f",output_cpu[SIZE-1-i]);
+      printf("%-10f\n",output_cpu[SIZE-1-i]);
     }
   }
 
