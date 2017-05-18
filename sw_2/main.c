@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -52,9 +53,13 @@ int main(int argc, char** argv)
     output_cpu[i] = 0.0f;
 
   // computation
-  for (i = 0; i < SIZE; i++){
-    for( j = 0; j < SIZE; j++)
+  for (i = 0; i < 1; i++){
+    for( j = 0; j < SIZE; j++){
       output_cpu[SIZE-1-i] += input_a[SIZE-1-i] * input_b[SIZE*(SIZE-1-i)+SIZE-1-j];
+      printf("%-10f",input_a[SIZE-1-i]);
+      printf("%-10f",input_b[SIZE*(SIZE-1-i)+SIZE-1-j]);
+      printf("%-10f",output_cpu[SIZE-1-i]);
+    }
   }
 
   // FPGA offloading
@@ -80,10 +85,10 @@ int main(int argc, char** argv)
 
   // display
   printf("%-10s%-10s%-10s%-10s\n", "index", "CPU", "FPGA", "FPGA(hex)");
-  for(i = 0; i<SIZE; i++){
-  container.f = output_fpga[i];
-  printf("%-10d%-10f%-10f%-10X\n", 0, output_cpu[i], output_fpga[i], container.i);
-  }
+  //for(i = 0; i<SIZE; i++){
+ // container.f = output_fpga[i];
+  //printf("%-10d%-10f%-10f%-10X\n", 0, output_cpu[i], output_fpga[i], container.i);
+  //}
 
   close(foo);
 
