@@ -66,6 +66,7 @@ int main(int argc, char** argv)
   for (i = 0; i < (SIZE+1)*SIZE; i++)
   {
     *(fpga_bram + i) = flat[i];
+    printf("%f",flat[i]);
   }
 
   // run
@@ -83,7 +84,7 @@ int main(int argc, char** argv)
   printf("%-10s%-10s%-10s%-10s\n", "index", "CPU", "FPGA", "FPGA(hex)");
   for(i = 0; i<SIZE; i++){
   container.f = output_fpga[i];
-  printf("%-10d%-10f%-10f%-10X\n", i, output_cpu[i], output_fpga[i], container.i);
+  //printf("%-10d%-10f%-10f%-10X\n", i, output_cpu[i], output_fpga[i], container.i);
   }
 
   close(foo);
